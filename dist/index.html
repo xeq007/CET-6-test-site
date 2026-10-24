@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#1f5147">
+ <meta name="description" content="把长文章读成小进步。分段阅读、记录生词、定位原文和复习词组的六级阅读练习站。">
+ <title>拾光阅读 · CET-6 Reading Lab</title>
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23245147'/%3E%3Cpath d='M15 18c8-3 14-1 17 3 5-4 11-6 17-3v29c-7-3-12-1-17 3-4-4-10-6-17-3z' fill='none' stroke='%23e8e8ce' stroke-width='3'/%3E%3Cpath d='M32 22v28' stroke='%23e8e8ce' stroke-width='3'/%3E%3C/svg%3E">
+ <link rel="stylesheet" href="./style.css"><script type="module" src="./app.mjs"></script>
+</head>
+<body>
+ <aside class="sidebar" id="sidebar"></aside>
+ <div class="main-shell"><header class="topbar"><div class="breadcrumb">你的阅读自习室 <span>/</span> <strong id="pageLabel">练习集</strong></div><div class="top-actions"><span class="local-status"><i></i> 本机自动保存</span><button class="button primary small" data-action="import"><span aria-hidden="true">＋</span> 导入新练习</button></div></header><main id="main"></main><footer class="footer"><span>拾光阅读 · 每次读懂一点点</span><span>公开阅读站 · 个人进度仅保存在当前浏览器</span></footer></div>
+ <dialog id="wordDialog" class="word-dialog"><form id="wordForm"><div class="dialog-heading"><span class="eyebrow">MY VOCABULARY</span><button type="button" class="icon-button" data-close="wordDialog" aria-label="关闭生词卡">×</button></div><h2 id="wordTitle"></h2><div id="wordMeta"></div><label class="field-label" for="wordMeaning">中文释义</label><textarea id="wordMeaning" rows="2" maxlength="500" placeholder="补充一个你能记住的释义…" required></textarea><p class="field-help" id="dictionaryNote"></p><label class="field-label" for="wordNote">我的记忆笔记 <span>选填</span></label><input id="wordNote" maxlength="300" placeholder="如：和文章中的哪个表达同义？"><blockquote id="wordContext"></blockquote><button class="button primary wide" type="submit" id="wordSave">加入生词本</button></form></dialog>
+ <dialog id="importDialog" class="import-dialog"><div class="dialog-heading"><div><span class="eyebrow">BRING YOUR OWN PASSAGE</span><h2>开始你自己的阅读</h2></div><button class="icon-button" data-close="importDialog" aria-label="关闭导入">×</button></div><div class="import-steps"><span id="stepOne" class="active">01 粘贴内容</span><i></i><span id="stepTwo">02 核对题目</span></div><div id="importContent"></div></dialog>
+ <dialog id="summaryDialog" class="summary-dialog"><div id="summaryContent"></div></dialog>
+ <dialog id="translationDialog" class="translation-dialog"><div id="translationContent"></div></dialog>
+ <dialog id="confirmDialog" class="confirm-dialog"><h2 id="confirmTitle"></h2><p id="confirmText"></p><div class="button-row"><button class="button" data-close="confirmDialog">取消</button><button class="button primary" id="confirmYes">确认</button></div></dialog>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ <noscript>请启用 JavaScript 以使用阅读练习和本机保存功能。</noscript>
+</body>
+</html>
